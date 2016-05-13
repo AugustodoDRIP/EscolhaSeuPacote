@@ -1,0 +1,54 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pm="http://primefaces.org/mobile">
+
+<f:view renderKitId="PRIMEFACES_MOBILE" />
+
+<h:head>
+	<h:outputScript name="jquery/jquery.js" library="primefaces"/>
+</h:head>
+
+<h:body>
+
+	<pm:page title="#{pacotes.nomeEmpresa}">
+
+		<pm:header title="#{pacotes.nomeAplicacao}" />
+		<pm:header>Veja as opções:</pm:header>
+		<pm:content>
+			<h:form id="form">
+
+				<p:accordionPanel>
+					<c:forEach begin="1" end="#{pacotes.totalItensMenu}" var="n">
+						<p:tab title="#{pacotes.getPacote(n).nome}">
+							<p:outputPanel style="text-align: left">
+								<div align="left">
+									<h:outputText value="#{pacotes.getPacote(n).servicos}" />
+									<p />
+									<h:outputText value="Valor R$#{pacotes.getPacote(n).preco}" />
+									<p />
+									<p:commandButton value="Contratar" onclick="PF('dlg1').show()" >
+									</p:commandButton>
+								</div>
+							</p:outputPanel>
+						</p:tab>
+					</c:forEach>
+				</p:accordionPanel>
+
+				<p:dialog header="#{pacotes.nomeEmpresa}" widgetVar="dlg1" showEffect="pop">
+					<h:outputText value="Pacote contratado com sucesso!" />
+					<p:commandButton 
+					onclick="PF('dlg1').hide();" value="Ok" >
+					</p:commandButton>
+				</p:dialog>
+			</h:form>
+		</pm:content>
+
+	</pm:page>
+
+</h:body>
+
+</html>

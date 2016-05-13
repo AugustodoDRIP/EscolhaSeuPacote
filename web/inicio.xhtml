@@ -13,43 +13,16 @@
 </h:head>
 
 <h:body>
-
-	<pm:page title="#{pacote.nomeEmpresa}">
-
-		<pm:header title="#{pacote.nomeAplicacao}" />
+	<pm:page id="telaLogin">
+		<pm:header title="#{pacotes.nomeAplicacao}" />
+		<pm:header>Queremos saber quem é você:</pm:header>
 		<pm:content>
-			<h:form id="form">
-
-				<p:accordionPanel>
-					<c:forEach begin="1" end="#{pacote.totalItensMenu}" var="n">
-						<p:tab title="#{pacote.getPacote(n).nome}">
-							<p:outputPanel style="text-align: center">
-								<div align="left">
-									<p:graphicImage value="/imgs/#{n}.jpg" width="100" height="100" />
-									<p />
-									<h:outputText value="#{pacote.getPacote(n).servicos}" />
-									<p />
-									<h:outputText value="Valor R$ #{pacote.getPacote(n).preco}" />
-									<p />
-									<p:commandButton value="Contratar" onclick="PF('dlg1').show()" align="center">
-									</p:commandButton>
-								</div>
-							</p:outputPanel>
-						</p:tab>
-					</c:forEach>
-				</p:accordionPanel>
-
-				<p:dialog header="#{pacote.nomePacote}" widgetVar="dlg1" showEffect="pop">
-					<h:outputText value="Pacote contratado com sucesso!" />
-					<p:commandButton 
-					onclick="PF('dlg1').hide();" value="Ok" >
-					</p:commandButton>
-				</p:dialog>
+			<h:form id="frmTelaLogin">
+				<p:outputLabel value="Digite seu nome:" />
+				<p:inputText value="#{pacote.LoginNome}" />
+				<p:commandButton value="Entrar" action="menu_de_pacotes.ifba" />
 			</h:form>
 		</pm:content>
-
 	</pm:page>
-
 </h:body>
-
 </html>

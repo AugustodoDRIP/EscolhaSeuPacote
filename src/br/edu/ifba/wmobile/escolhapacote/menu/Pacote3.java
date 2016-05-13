@@ -1,4 +1,4 @@
-package br.edu.ifba.wmobile.escolhapacote.menu;
+package br.edu.ifba.wmobile.escolhaseupacote.menu;
 
 import java.util.List;
 
@@ -22,7 +22,7 @@ public class Pacote3 implements IPacote{
 	}
 	@Override
 	public double getPreco() {
-		return anterior.getPreco() + 2.100;
+		return anterior.getPreco() + 2100;
 	}
 
 }

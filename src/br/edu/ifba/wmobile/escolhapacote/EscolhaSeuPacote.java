@@ -1,20 +1,21 @@
-package br.edu.ifba.wmobile.escolhapacote;
+package br.edu.ifba.wmobile.escolhaseupacote;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 
-import br.edu.ifba.wmobile.escolhapacote.menu.IPacote;
-import br.edu.ifba.wmobile.escolhapacote.menu.Pacote1;
-import br.edu.ifba.wmobile.escolhapacote.menu.Pacote2;
-import br.edu.ifba.wmobile.escolhapacote.menu.Pacote3;
-import br.edu.ifba.wmobile.escolhapacote.menu.Pacote4;
-import br.edu.ifba.wmobile.escolhapacote.menu.TelaLogin;
+import br.edu.ifba.wmobile.escolhaseupacote.menu.IPacote;
+import br.edu.ifba.wmobile.escolhaseupacote.menu.Pacote1;
+import br.edu.ifba.wmobile.escolhaseupacote.menu.Pacote2;
+import br.edu.ifba.wmobile.escolhaseupacote.menu.Pacote3;
+import br.edu.ifba.wmobile.escolhaseupacote.menu.Pacote4;
+import br.edu.ifba.wmobile.escolhaseupacote.menu.TelaLogin;
 
-@ManagedBean(name="pacote")
+@ManagedBean(name="pacotes")
 public class EscolhaSeuPacote {
 
+	private String nome="";
 	private static List<IPacote> menu = new ArrayList<IPacote>();
 	private static TelaLogin usuario = new TelaLogin();
 	static{
@@ -28,7 +29,7 @@ public class EscolhaSeuPacote {
 		menu.add(pacote);
 	}
 	public String getNomeEmpresa(){
-		return "Construtora X";
+		return "&DS Construtora";
 	}
 	public String getNomeAplicacao(){
 		return "Escolha seu Pacote";
@@ -41,5 +42,8 @@ public class EscolhaSeuPacote {
 	}
 	public void escolher(int n){
 		System.out.println("O "+getPacote(n).getNome()+" foi escolhido por "+usuario.getLogin().get(n));
+	}
+	public void setLoginNome(String nome){
+		this.nome=nome;
 	}
 }

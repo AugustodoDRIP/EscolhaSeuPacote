@@ -1,4 +1,4 @@
-package br.edu.ifba.wmobile.escolhapacote.menu;
+package br.edu.ifba.wmobile.escolhaseupacote.menu;
 
 import java.util.List;
 
