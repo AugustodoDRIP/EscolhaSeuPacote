@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 
 import br.edu.ifba.wmobile.escolhaseupacote.menu.IPacote;
 import br.edu.ifba.wmobile.escolhaseupacote.menu.Pacote1;
@@ -12,12 +13,13 @@ import br.edu.ifba.wmobile.escolhaseupacote.menu.Pacote3;
 import br.edu.ifba.wmobile.escolhaseupacote.menu.Pacote4;
 
 @ManagedBean(name="pacotes")
+@SessionScoped
 public class EscolhaSeuPacote {
 
-	private String loginNome="";
-	private String loginSobrenome="";
-	private String loginEmail="";
-	private String loginTel="";
+	private String loginNome;
+	private String loginSobrenome;
+	private String loginEmail;
+	private String loginTel;
 	
 	private static List<IPacote> menu = new ArrayList<IPacote>();
 	
@@ -44,7 +46,8 @@ public class EscolhaSeuPacote {
 		return menu.size();
 	}
 	public void escolher(int n){
-		System.out.println("O "+getPacote(n).getNome()+" foi escolhido por "+loginNome+".");
+		System.out.println("O \""+getPacote(n).getNome()+"\" foi escolhido por "+loginNome+" "+loginSobrenome
+				+". "+"Email p/ contato: "+loginEmail+", Telefone: "+loginTel);
 	}
 	
 	//GETTERS & SETTERS

@@ -15,9 +15,9 @@
 <h:body>
 
 	<pm:page title="#{pacotes.nomeEmpresa}">
-
-		<pm:header title="#{pacotes.nomeAplicacao}" />
-		<pm:header>Veja as opções:</pm:header>
+		<pm:header title="#{pacotes.nomeAplicacao}" style="color:black"/>
+		<pm:header style="text-align:left">Veja as opções:</pm:header>
+		
 		<pm:content>
 			<h:form id="form">
 
@@ -36,15 +36,14 @@
 						</p:tab>
 					</c:forEach>
 				</p:accordionPanel>
-
+				
 				<p:dialog header="Obrigado!" widgetVar="dlg1" showEffect="pop">
     				<h:outputText value="Pacote escolhido com sucesso! Agora dirija-se à um atendente para acertar os detalhes." />
     				<p:commandButton value="Ok" onclick="PF('dlg1').hide()" type="button" styleClass="ui-btn-b" />
-				</p:dialog>
-				
-			</h:form>
+				</p:dialog>	
+			
+			</h:form>	
 		</pm:content>
-
 	</pm:page>
 
 </h:body>
