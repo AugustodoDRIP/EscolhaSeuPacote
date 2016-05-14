@@ -13,14 +13,21 @@
 </h:head>
 
 <h:body>
-	<pm:page id="telaLogin">
+	<pm:page id="telaLogin" title="#{pacotes.nomeEmpresa}">
 		<pm:header title="#{pacotes.nomeAplicacao}" />
 		<pm:header>Queremos saber quem é você:</pm:header>
 		<pm:content>
 			<h:form id="frmTelaLogin">
 				<p:outputLabel value="Digite seu nome:" />
-				<p:inputText value="#{pacote.LoginNome}" />
-				<p:commandButton value="Entrar" action="menu_de_pacotes.ifba" />
+				<p:inputText value="#{pacotes.loginNome}" />
+				<p:outputLabel value="Digite seu sobrenome:" />
+				<p:inputText value="#{pacotes.loginSobrenome}" />
+				<p:outputLabel value="Digite seu email:" />
+				<p:inputText value="#{pacotes.loginEmail}" />
+				<p:outputLabel value="Digite seu telefone:" />
+				<p:inputText value="#{pacotes.loginTel}" />
+				
+				<p:commandButton value="Entrar" action="menu_de_pacotes.ifba" styleClass="ui-btn-b"/>
 			</h:form>
 		</pm:content>
 	</pm:page>

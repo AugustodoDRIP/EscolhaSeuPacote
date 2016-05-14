@@ -9,7 +9,7 @@
 <f:view renderKitId="PRIMEFACES_MOBILE" />
 
 <h:head>
-	<h:outputScript name="jquery/jquery.js" library="primefaces"/>
+	<h:outputScript name="jquery/jquery-plugins.js" library="primefaces"/>
 </h:head>
 
 <h:body>
@@ -30,20 +30,18 @@
 									<p />
 									<h:outputText value="Valor R$#{pacotes.getPacote(n).preco}" />
 									<p />
-									<p:commandButton value="Contratar" onclick="PF('dlg1').show()" >
-									</p:commandButton>
+									<p:commandButton value="Escolher" onclick="PF('dlg1').show()" action="#{pacotes.escolher(n)}" styleClass="ui-btn-b"/>
 								</div>
 							</p:outputPanel>
 						</p:tab>
 					</c:forEach>
 				</p:accordionPanel>
 
-				<p:dialog header="#{pacotes.nomeEmpresa}" widgetVar="dlg1" showEffect="pop">
-					<h:outputText value="Pacote contratado com sucesso!" />
-					<p:commandButton 
-					onclick="PF('dlg1').hide();" value="Ok" >
-					</p:commandButton>
+				<p:dialog header="Obrigado!" widgetVar="dlg1" showEffect="pop">
+    				<h:outputText value="Pacote escolhido com sucesso! Agora dirija-se à um atendente para acertar os detalhes." />
+    				<p:commandButton value="Ok" onclick="PF('dlg1').hide()" type="button" styleClass="ui-btn-b" />
 				</p:dialog>
+				
 			</h:form>
 		</pm:content>
 
