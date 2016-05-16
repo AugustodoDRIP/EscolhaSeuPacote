@@ -12,6 +12,8 @@ import br.edu.ifba.wmobile.escolhaseupacote.menu.Pacote2;
 import br.edu.ifba.wmobile.escolhaseupacote.menu.Pacote3;
 import br.edu.ifba.wmobile.escolhaseupacote.menu.Pacote4;
 
+/* Author Andre Daniel Sobreira */
+
 @ManagedBean(name="pacotes")
 @SessionScoped
 public class EscolhaSeuPacote {

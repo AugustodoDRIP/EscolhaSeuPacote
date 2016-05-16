@@ -2,6 +2,8 @@ package br.edu.ifba.wmobile.escolhaseupacote.menu;
 
 import java.util.List;
 
+/* Author Andre Daniel Sobreira */
+
 public class Pacote4 implements IPacote{
 
 	private IPacote anterior;
